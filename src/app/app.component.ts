@@ -1,13 +1,31 @@
 import { Component } from '@angular/core';
-
+import { QUOTES } from './data';
+import { Quote } from './quote';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  aquaticCreatures = ['shark', 'dolphin', 'octopus'];
+  isOn = false;
+  QUOTES: Quote[] = []
 
-  addAquaticCreature(newAquaticCreature: string) {
-    this.aquaticCreatures = [...this.aquaticCreatures,newAquaticCreature]
+  clicked() {
+    this.isOn = !this.isOn;
+  }
+
+   message() {
+    return `The light is ${this.isOn ? 'On' : 'Off'}`;
+  }
+
+  Quotes(): Quote[]{
+  return this.QUOTES = QUOTES;
+  }
+
+ swap(a: any, b: any) {
+    let t = 
+    b = a
+    a = b
+    return [a, b]
   }
 }
+
